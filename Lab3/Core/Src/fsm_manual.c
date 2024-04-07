@@ -11,6 +11,8 @@
 
 void fsm_manual_run(){
 
+
+
 	switch(statusLed){
 		case MAN_RED:
 			if (timer3_flag == 1){
@@ -25,6 +27,9 @@ void fsm_manual_run(){
 				count2 = TIME_NORMAL_RED;
 				setTimer1(TIME_NORMAL_GREEN);
 				mode = 1;
+			}
+			if ((is_long_button_flag() == 1)){
+				countMan1++;
 			}
 			if (is_button_pressed(0) == 1){
 				statusLed = MAN_YELLOW;
@@ -69,6 +74,9 @@ void fsm_manual_run(){
 			if (is_button_pressed(1) == 1){
 				countMan1 = countMan1 + 1;
 			}
+			if ((is_long_button_flag() == 1)){
+				countMan1++;
+			}
 			if (is_button_pressed(2) == 1){
 				statusLed = YELLOW_RED;
 				mode = 1;
@@ -102,6 +110,9 @@ void fsm_manual_run(){
 			}
 			if (is_button_pressed(1) == 1){
 				countMan1 = countMan1 + 1;
+			}
+			if ((is_long_button_flag() == 1)){
+				countMan1++;
 			}
 			if (is_button_pressed(2) == 1){
 				statusLed = GREEN_RED;

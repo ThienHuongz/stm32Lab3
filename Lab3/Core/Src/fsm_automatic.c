@@ -17,12 +17,9 @@ void fsm_automatic_run(){
 		case INIT:
 			red_green();
 			statusLed = RED_GREEN;
-//			count1 = 5;
-//			count2 = 3;
 			setTimer0(TIME_NORMAL_GREEN*100);
 			setTimer1(1);
 			setTimer2(100);
-
 			break;
 		case RED_GREEN:
 			red_green();
@@ -100,6 +97,7 @@ void fsm_automatic_run(){
 		  handle7SEG();
 		  setTimer1(1);
 	 }
+
 
 }
 void handle7SEG(){
